@@ -1,8 +1,8 @@
-# <img src="/src/icon.png" height="25px"> NServiceBus Validation
+# <img src="/src/icon.png" height="25px"> NServiceBus.Community.Validation
 
-[![Build status](https://img.shields.io/appveyor/build/SimonCropp/nservicebus-validation)](https://ci.appveyor.com/project/SimonCropp/nservicebus-validation)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.DataAnnotations.svg?label=NServiceBus.DataAnnotations)](https://www.nuget.org/packages/NServiceBus.DataAnnotations/)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.FluentValidation.svg?label=NServiceBus.FluentValidation)](https://www.nuget.org/packages/NServiceBus.FluentValidation/)
+[![Build status](https://img.shields.io/appveyor/build/SimonCropp/nservicebus-community-validation)](https://ci.appveyor.com/project/SimonCropp/nservicebus-community-validation)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.DataAnnotations.svg?label=NServiceBus.Community.DataAnnotations)](https://www.nuget.org/packages/NServiceBus.Community.DataAnnotations/)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.FluentValidation.svg?label=NServiceBus.Community.FluentValidation)](https://www.nuget.org/packages/NServiceBus.Community.FluentValidation/)
 
 Message validation using [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) and [FluentValidation](https://github.com/JeremySkinner/FluentValidation).
 
@@ -15,19 +15,19 @@ Message validation using [DataAnnotations](https://msdn.microsoft.com/en-us/libr
 
 ## Community backed
 
-**It is expected that all developers either [become a Patron](https://opencollective.com/nservicebusextensions/contribute/patron-6976) to use NServiceBusExtensions. [Go to licensing FAQ](https://github.com/NServiceBusExtensions/Home/#licensingpatron-faq)**
+**It is expected that all developers [become a Patron](https://opencollective.com/nservicebuscommunity/contribute/patron-6976) to use NServiceBus Community Extensions. [Go to licensing FAQ](https://github.com/NServiceBusCommunity/Home/#licensingpatron-faq)**
 
 
 ### Sponsors
 
-Support this project by [becoming a Sponsor](https://opencollective.com/nservicebusextensions/contribute/sponsor-6972). The company avatar will show up here with a website link. The avatar will also be added to all GitHub repositories under the [NServiceBusExtensions organization](https://github.com/NServiceBusExtensions).
+Support this project by [becoming a Sponsor](https://opencollective.com/nservicebuscommunity/contribute/sponsor-6972). The company avatar will show up here with a website link. The avatar will also be added to all GitHub repositories under the [NServiceBusCommunity organization](https://github.com/NServiceBusCommunity).
 
 
 ### Patrons
 
-Thanks to all the backing developers. Support this project by [becoming a patron](https://opencollective.com/nservicebusextensions/contribute/patron-6976).
+Thanks to all the backing developers. Support this project by [becoming a patron](https://opencollective.com/nservicebuscommunity/contribute/patron-6976).
 
-<img src="https://opencollective.com/nservicebusextensions/tiers/patron.svg?width=890&avatarHeight=60&button=false">
+<img src="https://opencollective.com/nservicebuscommunity/tiers/patron.svg?width=890&avatarHeight=60&button=false">
 
 <a href="#" id="endofbacking"></a>
 
@@ -41,7 +41,7 @@ Uses [FluentValidation](https://github.com/JeremySkinner/FluentValidation) to va
 
 ### NuGet package
 
-https://www.nuget.org/packages/NServiceBus.FluentValidation/
+https://www.nuget.org/packages/NServiceBus.Community.FluentValidation/
 
 
 ### Usage
