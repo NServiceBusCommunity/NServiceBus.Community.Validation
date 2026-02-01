@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="FluentValidation" />
-    <ProjectReference Include="..\NServiceBus.FluentValidation\NServiceBus.FluentValidation.csproj" />
+    <PackageReference Include="NServiceBus" />
+    <PackageReference Include="Verify.NServiceBus" />
+    <ProjectReference Include="..\NServiceBus.FluentValidation\NServiceBus.Community.FluentValidation.csproj" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
   </ItemGroup>
 </Project>

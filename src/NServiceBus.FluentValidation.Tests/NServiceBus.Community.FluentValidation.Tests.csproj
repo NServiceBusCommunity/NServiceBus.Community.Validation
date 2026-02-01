@@ -10,9 +10,9 @@
     <PackageReference Include="NUnit3TestAdapter" />
     <PackageReference Include="MarkdownSnippets.MsBuild" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <ProjectReference Include="..\NServiceBus.FluentValidation.Sample\NServiceBus.FluentValidation.Sample.csproj" />
-    <ProjectReference Include="..\NServiceBus.FluentValidation.Testing\NServiceBus.FluentValidation.Testing.csproj" />
-    <ProjectReference Include="..\NServiceBus.FluentValidation\NServiceBus.FluentValidation.csproj" />
+    <ProjectReference Include="..\NServiceBus.FluentValidation.Sample\NServiceBus.Community.FluentValidation.Sample.csproj" />
+    <ProjectReference Include="..\NServiceBus.FluentValidation.Testing\NServiceBus.Community.FluentValidation.Testing.csproj" />
+    <ProjectReference Include="..\NServiceBus.FluentValidation\NServiceBus.Community.FluentValidation.csproj" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <Using Include="NUnit.Framework.Legacy.ClassicAssert" Static="True" />
     <Using Include="NUnit.Framework.Assert" Static="True" />

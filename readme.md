@@ -1,8 +1,8 @@
 # <img src="/src/icon.png" height="25px"> NServiceBus.Community.Validation
 
 [![Build status](https://img.shields.io/appveyor/build/SimonCropp/nservicebus-community-validation)](https://ci.appveyor.com/project/SimonCropp/nservicebus-community-validation)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.DataAnnotations.svg?label=NServiceBus.Community.DataAnnotations)](https://www.nuget.org/packages/NServiceBus.Community.DataAnnotations/)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.FluentValidation.svg?label=NServiceBus.Community.FluentValidation)](https://www.nuget.org/packages/NServiceBus.Community.FluentValidation/)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Community.DataAnnotations.svg?label=NServiceBus.Community.DataAnnotations)](https://www.nuget.org/packages/NServiceBus.Community.DataAnnotations/)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Community.FluentValidation.svg?label=NServiceBus.Community.FluentValidation)](https://www.nuget.org/packages/NServiceBus.Community.FluentValidation/)
 
 Message validation using [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) and [FluentValidation](https://github.com/JeremySkinner/FluentValidation).
 
