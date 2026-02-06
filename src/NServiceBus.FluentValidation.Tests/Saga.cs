@@ -1,6 +1,6 @@
 ﻿class MySaga :
     Saga<MySaga.MySagaData>,
-    IHandleMessages<MyMessage>
+    IAmStartedByMessages<MyMessage>
 {
     public Task Handle(MyMessage message, HandlerContext context)
     {
@@ -8,9 +8,9 @@
         return Task.CompletedTask;
     }
 
-    protected override void ConfigureHowToFindSaga(SagaPropertyMapper<MySagaData> mapper)
-    {
-    }
+    protected override void ConfigureHowToFindSaga(SagaPropertyMapper<MySagaData> mapper) =>
+        mapper.MapSaga(saga => saga.Property)
+            .ToMessage<MyMessage>(msg => msg.Content);
 
     public class MySagaData :
         ContainSagaData

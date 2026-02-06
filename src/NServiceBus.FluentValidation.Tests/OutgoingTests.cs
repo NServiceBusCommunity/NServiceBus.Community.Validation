@@ -66,7 +66,7 @@ public class OutgoingTests
         var configuration = new EndpointConfiguration("FluentValidationOutgoing" + key);
         configuration.UseTransport<LearningTransport>();
         configuration.PurgeOnStartup(true);
-        configuration.DisableFeature<Sagas>();
+        configuration.UsePersistence<LearningPersistence>();
         configuration.UseSerialization<SystemJsonSerializer>();
 
         configuration.UseFluentValidation(incoming: false, fallback: fallback);

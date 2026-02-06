@@ -74,7 +74,7 @@ public class IncomingTests
         var configuration = new EndpointConfiguration("FluentValidationIncoming" + key);
         configuration.UseTransport<LearningTransport>();
         configuration.PurgeOnStartup(true);
-        configuration.DisableFeature<Sagas>();
+        configuration.UsePersistence<LearningPersistence>();
         configuration.UseSerialization<SystemJsonSerializer>();
 
         var resetEvent = new ManualResetEvent(false);
