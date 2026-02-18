@@ -7,21 +7,19 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" />
     <PackageReference Include="Verify.NServiceBus" />
-    <PackageReference Include="Verify.Nunit" />
+    <PackageReference Include="Verify.TUnit" />
     <PackageReference Include="Argon" />
     <PackageReference Include="DiffEngine" />
     <PackageReference Include="EmptyFiles" />
     <PackageReference Include="SimpleInfoName" />
     <PackageReference Include="Verify" />
-    <PackageReference Include="NUnit" />
-    <PackageReference Include="NUnit3TestAdapter" />
     <PackageReference Include="MarkdownSnippets.MsBuild" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <ProjectReference Include="..\NServiceBus.FluentValidation.Sample\NServiceBus.Community.FluentValidation.Sample.csproj" />
     <ProjectReference Include="..\NServiceBus.FluentValidation.Testing\NServiceBus.Community.FluentValidation.Testing.csproj" />
     <ProjectReference Include="..\NServiceBus.FluentValidation\NServiceBus.Community.FluentValidation.csproj" />
     <PackageReference Include="ProjectDefaults" PrivateAssets="all" />
     <Using Include="NUnit.Framework.Legacy.ClassicAssert" Static="True" />
     <Using Include="NUnit.Framework.Assert" Static="True" />
+    <PackageReference Include="TUnit" />
   </ItemGroup>
 </Project>

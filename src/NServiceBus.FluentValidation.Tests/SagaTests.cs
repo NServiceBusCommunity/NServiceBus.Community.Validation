@@ -1,6 +1,6 @@
 ﻿using NServiceBus.FluentValidation.Testing;
+using System.Threading.Tasks;
 
-[TestFixture]
 public class SagaTests
 {
     [Test]

@@ -1,7 +1,7 @@
 ﻿using NServiceBus.FluentValidation.Testing;
 using VerifyTests.NServiceBus;
+using System.Threading.Tasks;
 
-[TestFixture]
 public class HandlerTests
 {
     [Test]
