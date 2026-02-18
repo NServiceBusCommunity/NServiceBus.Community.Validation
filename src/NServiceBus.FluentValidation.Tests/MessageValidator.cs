@@ -1,4 +1,4 @@
-﻿using FluentValidation.Results;
+using FluentValidation.Results;
 
 public class SyncMessageValidator :
     AbstractValidator<MessageWithValidator>
@@ -9,8 +9,8 @@ public class SyncMessageValidator :
 
     public override ValidationResult Validate(ValidationContext<MessageWithValidator> context)
     {
-        NotNull(context.Headers());
-        NotNull(context.ContextBag());
+        ArgumentNullException.ThrowIfNull(context.Headers());
+        ArgumentNullException.ThrowIfNull(context.ContextBag());
         return base.Validate(context);
     }
 }

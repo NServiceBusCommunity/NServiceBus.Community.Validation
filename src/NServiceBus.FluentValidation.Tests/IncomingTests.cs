@@ -1,19 +1,17 @@
-﻿using System.Threading.Tasks;
-
-public class IncomingTests
+﻿public class IncomingTests
 {
     [Test]
     public async Task With_no_validator()
     {
         var message = new MessageWithNoValidator();
-        Null(await Send(message));
+        await Assert.That(await Send(message)).IsNull();
     }
 
     [Test]
     public async Task With_no_validator_Fallback()
     {
         var message = new MessageWithNoValidator();
-        NotNull(await Send(message, fallback: _ => new FallbackValidator()));
+        await Assert.That(await Send(message, fallback: _ => new FallbackValidator())).IsNotNull();
     }
 
     class FallbackValidator : AbstractValidator<MessageWithNoValidator>
@@ -30,14 +28,14 @@ public class IncomingTests
         {
             Content = "content"
         };
-        Null(await Send(message));
+        await Assert.That(await Send(message)).IsNull();
     }
 
     [Test]
     public async Task With_validator_invalid()
     {
         var message = new MessageWithValidator();
-        NotNull(await Send(message));
+        await Assert.That(await Send(message)).IsNotNull();
     }
 
     [Test]
@@ -47,7 +45,7 @@ public class IncomingTests
         {
             Content = "content"
         };
-        Null(await Send(message));
+        await Assert.That(await Send(message)).IsNull();
     }
 
     [Test]

@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-public class OutgoingTests
+﻿public class OutgoingTests
 {
     [Test]
     public Task With_no_validator()
@@ -10,10 +8,10 @@ public class OutgoingTests
     }
 
     [Test]
-    public Task With_no_validator_Fallback()
+    public async Task With_no_validator_Fallback()
     {
         var message = new MessageWithNoValidator();
-        return ThrowsTask(() => Send(message, fallback: _ => new FallbackValidator()));
+        await Assert.ThrowsAsync<MessageValidationException>(() => Send(message, fallback: _ => new FallbackValidator()));
     }
 
     class FallbackValidator : AbstractValidator<MessageWithNoValidator>
@@ -34,10 +32,10 @@ public class OutgoingTests
     }
 
     [Test]
-    public Task With_validator_invalid()
+    public async Task With_validator_invalid()
     {
         var message = new MessageWithValidator();
-        return ThrowsTask(() => Send(message));
+        await Assert.ThrowsAsync<MessageValidationException>(() => Send(message));
     }
 
     [Test]
@@ -51,11 +49,11 @@ public class OutgoingTests
     }
 
     [Test]
-    public Task With_async_validator_invalid()
+    public async Task With_async_validator_invalid()
     {
         var message = new MessageWithAsyncValidator();
-        return ThrowsTask(() => Send(message))
-            .IgnoreStackTrace();
+        var exception = await Assert.ThrowsAsync<MessageValidationException>(() => Send(message));
+        await Verify(exception).IgnoreStackTrace();
     }
 
     static async Task Send(

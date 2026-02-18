@@ -1,7 +1,4 @@
-﻿using NServiceBus.FluentValidation.Testing;
-using System.Threading.Tasks;
-
-public class SagaTests
+﻿public class SagaTests
 {
     [Test]
     public async Task Ensure_saga_data_is_added_to_context()
@@ -18,6 +15,6 @@ public class SagaTests
             Data = sagaData
         };
         await handlerContext.Run(saga);
-        AreEqual(handlerContext.SagaData, sagaData);
+        await Assert.That(handlerContext.SagaData).IsEqualTo(sagaData);
     }
 }

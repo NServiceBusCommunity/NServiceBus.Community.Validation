@@ -1,8 +1,4 @@
-﻿using NServiceBus.FluentValidation.Testing;
-using VerifyTests.NServiceBus;
-using System.Threading.Tasks;
-
-public class HandlerTests
+﻿public class HandlerTests
 {
     [Test]
     public async Task Validate_TestableMessageHandlerContext()
@@ -10,7 +6,7 @@ public class HandlerTests
         var context = new RecordingHandlerContext();
 
         var message = new MyMessage();
-        await ThrowsTask(() => context.Validate(message));
+        await Assert.ThrowsAsync<MessageValidationException>(() => context.Validate(message));
     }
 
     [Test]
@@ -19,7 +15,7 @@ public class HandlerTests
         var message = new MyMessage();
         var context = ValidatingContext.Build(message);
         var handler = new MyHandler();
-        await ThrowsTask(() => context.Run(handler));
+        await Assert.ThrowsAsync<MessageValidationException>(() => context.Run(handler));
     }
 
     [Test]
@@ -50,7 +46,7 @@ public class HandlerTests
         var message = new SimpleMessage();
         var context = ValidatingContext.Build(message);
         var handler = new HandlerThatSends();
-        await ThrowsTask(() => handler.Handle(message, context));
+        await Assert.ThrowsAsync<Exception>(() => handler.Handle(message, context));
     }
 
     [Test]
@@ -58,6 +54,6 @@ public class HandlerTests
     {
         var message = new MyMessage();
         var handler = new MyHandler();
-        await ThrowsTask(() => ValidatingContext.Run(handler, message));
+        await Assert.ThrowsAsync<MessageValidationException>(() => ValidatingContext.Run(handler, message));
     }
 }

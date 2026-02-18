@@ -1,12 +1,10 @@
-﻿using System.Threading.Tasks;
-
 public class IncomingTests
 {
     [Test]
     public async Task With_no_validator()
     {
         var message = new MessageWithNoValidator();
-        Null(await Send(message));
+        await Assert.That(await Send(message)).IsNull();
     }
 
     [Test]
@@ -16,7 +14,7 @@ public class IncomingTests
         {
             Content = "content"
         };
-        Null(await Send(message));
+        await Assert.That(await Send(message)).IsNull();
     }
 
     [Test]

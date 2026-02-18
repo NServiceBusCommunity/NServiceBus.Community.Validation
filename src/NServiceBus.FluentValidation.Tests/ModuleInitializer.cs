@@ -1,6 +1,4 @@
-﻿using NServiceBus.FluentValidation.Testing;
-
-public static class ModuleInitializer
+﻿public static class ModuleInitializer
 {
     [ModuleInitializer]
     public static void Initialize()
