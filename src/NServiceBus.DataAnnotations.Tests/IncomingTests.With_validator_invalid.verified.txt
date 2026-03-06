@@ -30,6 +30,7 @@ at NServiceBus.ProcessingStatisticsBehavior.Invoke(IIncomingPhysicalMessageConte
 at NServiceBus.TransportReceiveToPhysicalMessageConnector.Invoke(ITransportReceiveContext context, Func`2 next)
 at NServiceBus.TransportReceiveToPhysicalMessageConnector.Invoke(ITransportReceiveContext context, Func`2 next)
 at NServiceBus.RetryAcknowledgementBehavior.Invoke(ITransportReceiveContext context, Func`2 next)
+at NServiceBus.TracingExtensions.<Invoke>g__TracePipelineStatus|0_0[TContext](IPipeline`1 pipeline, TContext context, Activity activity)
 at NServiceBus.MainPipelineExecutor.Invoke(MessageContext messageContext, CancellationToken cancellationToken)
 at NServiceBus.MainPipelineExecutor.Invoke(MessageContext messageContext, CancellationToken cancellationToken)
 at NServiceBus.LearningTransportMessagePump.ProcessFile(ILearningTransportTransaction transaction, String messageId, CancellationToken messageProcessingCancellationToken)
