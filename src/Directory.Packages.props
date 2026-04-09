@@ -8,8 +8,8 @@
     <PackageVersion Include="FluentValidation" Version="12.1.1" />
     <PackageVersion Include="Fody" Version="6.9.3" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.2" />
-    <PackageVersion Include="NServiceBus" Version="10.1.0" />
-    <PackageVersion Include="Polyfill" Version="9.24.0" />
+    <PackageVersion Include="NServiceBus" Version="10.1.1" />
+    <PackageVersion Include="Polyfill" Version="10.0.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.172" />
     <PackageVersion Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageVersion Include="Verify.NServiceBus" Version="11.0.1" />
@@ -20,6 +20,6 @@
     <PackageVersion Include="EmptyFiles" Version="8.17.2" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
     <PackageVersion Include="Verify" Version="31.15.0" />
-    <PackageVersion Include="TUnit" Version="1.24.18" />
+    <PackageVersion Include="TUnit" Version="1.29.0" />
   </ItemGroup>
 </Project>
