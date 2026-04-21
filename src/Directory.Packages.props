@@ -4,7 +4,7 @@
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="ConfigureAwait.Fody" Version="3.3.2" />
+    <PackageVersion Include="ConfigureAwait.Fody" Version="3.4.0" />
     <PackageVersion Include="FluentValidation" Version="12.1.1" />
     <PackageVersion Include="Fody" Version="6.9.3" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.2.0" />
@@ -20,6 +20,6 @@
     <PackageVersion Include="EmptyFiles" Version="8.18.1" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
     <PackageVersion Include="Verify" Version="31.16.1" />
-    <PackageVersion Include="TUnit" Version="1.37.10" />
+    <PackageVersion Include="TUnit" Version="1.37.24" />
   </ItemGroup>
 </Project>
