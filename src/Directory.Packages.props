@@ -10,7 +10,7 @@
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.2.0" />
     <PackageVersion Include="NServiceBus" Version="10.1.4" />
     <PackageVersion Include="Polyfill" Version="10.3.0" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.173" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.174" />
     <PackageVersion Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageVersion Include="Verify.NServiceBus" Version="11.0.1" />
     <PackageVersion Include="Verify.TUnit" Version="31.16.2" />
