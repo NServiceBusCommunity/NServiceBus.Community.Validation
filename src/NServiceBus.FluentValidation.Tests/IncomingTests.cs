@@ -69,7 +69,7 @@
         [CallerMemberName] string key = "",
         Func<Type, IValidator>? fallback = null)
     {
-        var services = new ServiceCollection();
+        var builder = Host.CreateApplicationBuilder();
         var configuration = new EndpointConfiguration("FluentValidationIncoming" + key);
         configuration.UseTransport<LearningTransport>();
         configuration.PurgeOnStartup(true);
@@ -77,7 +77,7 @@
         configuration.UseSerialization<SystemJsonSerializer>();
 
         var resetEvent = new ManualResetEvent(false);
-        services.AddSingleton(resetEvent);
+        builder.Services.AddSingleton(resetEvent);
         MessageValidationException exception = null!;
         var recoverability = configuration.Recoverability();
         recoverability.CustomPolicy(
@@ -88,14 +88,14 @@
                 return RecoverabilityAction.Discard("error");
             });
         configuration.UseFluentValidation(outgoing: false, fallback: fallback);
-        services.AddValidatorsFromAssemblyContaining<MessageWithNoValidator>(throwForNonPublicValidators: false);
+        builder.Services.AddValidatorsFromAssemblyContaining<MessageWithNoValidator>(throwForNonPublicValidators: false);
 
-        var endpointProvider = EndpointWithExternallyManagedContainer
-            .Create(configuration, services);
+        builder.Services.AddNServiceBusEndpoint(configuration);
 
-        await using var provider = services.BuildServiceProvider();
-        var endpoint = await endpointProvider.Start(provider);
-        await endpoint.SendLocal(message);
+        using var host = builder.Build();
+        await host.StartAsync();
+        var session = host.Services.GetRequiredService<IMessageSession>();
+        await session.SendLocal(message);
         if (!resetEvent.WaitOne(TimeSpan.FromSeconds(10)))
         {
             if (exception == null)
@@ -104,7 +104,7 @@
             }
         }
 
-        await endpoint.Stop();
+        await host.StopAsync();
         return exception;
     }
 }

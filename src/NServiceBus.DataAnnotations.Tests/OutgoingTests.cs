@@ -27,9 +27,9 @@
 
     static async Task Send(object message, [CallerMemberName] string key = "")
     {
-        var services = new ServiceCollection();
+        var builder = Host.CreateApplicationBuilder();
         var resetEvent = new ManualResetEvent(false);
-        services.AddSingleton(resetEvent);
+        builder.Services.AddSingleton(resetEvent);
         var configuration = new EndpointConfiguration("DataAnnotationsOutgoing" + key);
         configuration.UseTransport<LearningTransport>();
         configuration.PurgeOnStartup(true);
@@ -37,17 +37,17 @@
 
         configuration.UseDataAnnotationsValidation(incoming: false);
 
-        var endpointProvider = EndpointWithExternallyManagedContainer
-            .Create(configuration, services);
-        await using var provider = services.BuildServiceProvider();
-        var endpoint = await endpointProvider.Start(provider);
+        builder.Services.AddNServiceBusEndpoint(configuration);
+        using var host = builder.Build();
+        await host.StartAsync();
+        var session = host.Services.GetRequiredService<IMessageSession>();
         try
         {
-            await endpoint.SendLocal(message);
+            await session.SendLocal(message);
         }
         finally
         {
-            await endpoint.Stop();
+            await host.StopAsync();
         }
     }
 }

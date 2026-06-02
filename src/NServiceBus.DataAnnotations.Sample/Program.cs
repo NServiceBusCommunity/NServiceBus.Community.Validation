@@ -1,21 +1,21 @@
-﻿var services = new ServiceCollection();
+﻿var builder = Host.CreateApplicationBuilder();
 var configuration = new EndpointConfiguration("DataAnnotationsValidationSample");
 configuration.UsePersistence<LearningPersistence>();
 configuration.UseTransport<LearningTransport>();
 configuration.UseDataAnnotationsValidation(outgoing: false);
 configuration.UseSerialization<SystemJsonSerializer>();
 
-var endpointProvider = EndpointWithExternallyManagedContainer
-    .Create(configuration, services);
-await using var provider = services.BuildServiceProvider();
-var endpoint = await endpointProvider.Start(provider);
+builder.Services.AddNServiceBusEndpoint(configuration);
+using var host = builder.Build();
+await host.StartAsync();
+var session = host.Services.GetRequiredService<IMessageSession>();
 
-await endpoint.SendLocal(new MyMessage
+await session.SendLocal(new MyMessage
 {
     Content = "sd"
 });
-await endpoint.SendLocal(new MyMessage());
+await session.SendLocal(new MyMessage());
 
 Console.WriteLine("Press any key to stop program");
 Console.Read();
-await endpoint.Stop();
+await host.StopAsync();

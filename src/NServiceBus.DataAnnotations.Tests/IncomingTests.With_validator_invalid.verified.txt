@@ -18,20 +18,5 @@ Validation failed for message 'MessageWithValidator'.
     Message ID: Guid_1,
     Transport message ID: Guid_2,
     Pipeline canceled: false
-  },
-  StackTrace:
-at MessageValidator.Validate(Object message, IServiceProvider builder, Dictionary`2 headers, ContextBag contextBag)
-at IncomingValidationBehavior.Validate(IIncomingLogicalMessageContext context)
-at IncomingValidationBehavior.Invoke(IIncomingLogicalMessageContext context, Func`1 next)
-at NServiceBus.MutateIncomingMessageBehavior.InvokeIncomingMessageMutators(IIncomingLogicalMessageContext context, Func`2 next)
-at NServiceBus.DeserializeMessageConnector.Invoke(IIncomingPhysicalMessageContext context, Func`2 stage)
-at NServiceBus.MutateIncomingTransportMessageBehavior.InvokeIncomingTransportMessagesMutators(IIncomingPhysicalMessageContext context, Func`2 next)
-at NServiceBus.ProcessingStatisticsBehavior.Invoke(IIncomingPhysicalMessageContext context, Func`2 next)
-at NServiceBus.TransportReceiveToPhysicalMessageConnector.Invoke(ITransportReceiveContext context, Func`2 next)
-at NServiceBus.TransportReceiveToPhysicalMessageConnector.Invoke(ITransportReceiveContext context, Func`2 next)
-at NServiceBus.RetryAcknowledgementBehavior.Invoke(ITransportReceiveContext context, Func`2 next)
-at NServiceBus.TracingExtensions.<Invoke>g__TracePipelineStatus|0_0[TContext](IPipeline`1 pipeline, TContext context, Activity activity)
-at NServiceBus.MainPipelineExecutor.Invoke(MessageContext messageContext, CancellationToken cancellationToken)
-at NServiceBus.MainPipelineExecutor.Invoke(MessageContext messageContext, CancellationToken cancellationToken)
-at NServiceBus.LearningTransportMessagePump.ProcessFile(ILearningTransportTransaction transaction, String messageId, CancellationToken messageProcessingCancellationToken)
+  }
 }

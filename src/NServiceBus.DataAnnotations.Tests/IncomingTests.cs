@@ -21,12 +21,12 @@ public class IncomingTests
     public async Task With_validator_invalid()
     {
         var message = new MessageWithValidator();
-        await Verify(await Send(message));
+        await Verify(await Send(message)).IgnoreStackTrace();
     }
 
     static async Task<MessageValidationException> Send(object message, [CallerMemberName] string key = "")
     {
-        var services = new ServiceCollection();
+        var builder = Host.CreateApplicationBuilder();
 
         var configuration = new EndpointConfiguration("DataAnnotationsIncoming" + key);
         configuration.UseTransport<LearningTransport>();
@@ -34,7 +34,7 @@ public class IncomingTests
         configuration.UseSerialization<SystemJsonSerializer>();
 
         using var resetEvent = new ManualResetEvent(false);
-        services.AddSingleton(resetEvent);
+        builder.Services.AddSingleton(resetEvent);
         MessageValidationException exception = null!;
         var recoverability = configuration.Recoverability();
         recoverability.CustomPolicy(
@@ -46,12 +46,12 @@ public class IncomingTests
             });
         configuration.UseDataAnnotationsValidation(outgoing: false);
 
-        var endpointProvider = EndpointWithExternallyManagedContainer
-            .Create(configuration, services);
+        builder.Services.AddNServiceBusEndpoint(configuration);
 
-        await using var provider = services.BuildServiceProvider();
-        var endpoint = await endpointProvider.Start(provider);
-        await endpoint.SendLocal(message);
+        using var host = builder.Build();
+        await host.StartAsync();
+        var session = host.Services.GetRequiredService<IMessageSession>();
+        await session.SendLocal(message);
         if (!resetEvent.WaitOne(TimeSpan.FromSeconds(10)))
         {
             if (exception == null)
@@ -60,7 +60,7 @@ public class IncomingTests
             }
         }
 
-        await endpoint.Stop();
+        await host.StopAsync();
 
         return exception;
     }
