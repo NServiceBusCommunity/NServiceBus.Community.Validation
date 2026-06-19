@@ -19,7 +19,7 @@
     <PackageVersion Include="DiffEngine" Version="19.2.0" />
     <PackageVersion Include="EmptyFiles" Version="8.18.1" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
-    <PackageVersion Include="Verify" Version="31.19.1" />
+    <PackageVersion Include="Verify" Version="31.20.0" />
     <PackageVersion Include="TUnit" Version="1.56.0" />
   </ItemGroup>
 </Project>
