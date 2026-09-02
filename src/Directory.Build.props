@@ -3,13 +3,14 @@
   <PropertyGroup>
     <Version>14.0.0</Version>
     <AssemblyVersion>1.0.0</AssemblyVersion>
-    <NoWarn>CS1591;NU1608;NU1109</NoWarn>
+    <NoWarn>CS1591;NU1608;NU1109;SC023</NoWarn>
     <LangVersion>preview</LangVersion>
     <PackageTags>NServiceBus, Validation, DataAnnotations, FluentValidation</PackageTags>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+    <Verify_SponsorshipLicenseIgnored>true</Verify_SponsorshipLicenseIgnored>
   </PropertyGroup>
   <ItemGroup>
     <Using Include="NServiceBus.IMessageHandlerContext"
