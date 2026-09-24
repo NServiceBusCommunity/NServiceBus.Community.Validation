@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="25px"> NServiceBus.Community.Validation
 
-[![Build status](https://img.shields.io/appveyor/build/SimonCropp/nservicebus-community-validation)](https://ci.appveyor.com/project/SimonCropp/nservicebus-community-validation)
+[![Build status](https://github.com/NServiceBusCommunity/NServiceBus.Community.Validation/actions/workflows/build.yml/badge.svg)](https://github.com/NServiceBusCommunity/NServiceBus.Community.Validation/actions/workflows/build.yml)
 [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Community.DataAnnotations.svg?label=NServiceBus.Community.DataAnnotations)](https://www.nuget.org/packages/NServiceBus.Community.DataAnnotations/)
 [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Community.FluentValidation.svg?label=NServiceBus.Community.FluentValidation)](https://www.nuget.org/packages/NServiceBus.Community.FluentValidation/)
 
